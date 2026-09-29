@@ -1,0 +1,11 @@
+store_id,store_name,city,region,store_type,size_sqft,opening_date
+S001,StockSense Mart Chennai 01,Chennai,South,Hypermarket,55500,2012-11-21
+S002,StockSense Mart Chennai 02, chennai,South,Express,3300,2018-07-17
+S003,StockSense Mart Bengaluru 03,Bengaluru,South,Supermarket,23200,2016-04-29
+S004,StockSense Mart Hyderabad 04,Hyderabad,South,Supermarket,21100,2012-11-09
+S005,StockSense Mart Mumbai 05,Mumbai,West,Hypermarket,41900,2014-01-05
+S006,StockSense Mart Pune 06,Pune,West,Express,4900,2017-04-05
+S007,StockSense Mart Delhi 07,Delhi,North,Hypermarket,55200,2019-05-09
+S008,StockSense Mart Jaipur 08,Jaipur,North,Supermarket,22200,2019-03-03
+S009,StockSense Mart Lucknow 09,Lucknow,North,Express,2400,2017-02-16
+S010,StockSense Mart Kolkata 10,Kolkata,East,Supermarket,17900,2020-05-23

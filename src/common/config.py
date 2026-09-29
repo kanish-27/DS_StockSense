@@ -36,6 +36,8 @@ def _path_from_env(var_name: str, default: str) -> Path:
 RAW_DATA_DIR = _path_from_env("STOCKSENSE_RAW_DATA_DIR", "data/raw")
 PROCESSED_DATA_DIR = _path_from_env("STOCKSENSE_PROCESSED_DATA_DIR", "data/processed")
 MODELS_DIR = _path_from_env("STOCKSENSE_MODELS_DIR", "models")
+# Synthetic training data produced by src/data/generate_synthetic_data.py
+SYNTHETIC_DATA_DIR = PROJECT_ROOT / "data" / "synthetic"
 REPORTS_DIR = PROJECT_ROOT / "reports"
 
 # ---------------------------------------------------------------------------

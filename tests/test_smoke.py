@@ -14,6 +14,7 @@ import pytest
 MODULES = [
     "src.common.config",
     "src.data.prepare_data",
+    "src.data.generate_synthetic_data",
     "src.forecasting.train_forecast",
     "src.classification.train_stockout",
     "src.explainability.explain",

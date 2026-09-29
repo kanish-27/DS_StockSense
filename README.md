@@ -58,7 +58,8 @@ and the list of open team decisions.
 stocksense-demand-intelligence/
 ├── data/
 │   ├── raw/                # original hackathon data (git-ignored)
-│   └── processed/          # cleaned master dataset (git-ignored)
+│   ├── processed/          # cleaned master dataset (git-ignored)
+│   └── synthetic/          # SYNTHETIC training data (committed)
 ├── notebooks/
 │   ├── 01_data_understanding_eda.ipynb   # Student 1
 │   ├── 02_demand_forecasting.ipynb       # Student 2
@@ -66,6 +67,7 @@ stocksense-demand-intelligence/
 ├── src/
 │   ├── common/config.py                  # shared paths & settings
 │   ├── data/prepare_data.py              # cleaning + master dataset
+│   ├── data/generate_synthetic_data.py   # synthetic dataset generator
 │   ├── forecasting/train_forecast.py     # 7-day demand forecasting
 │   ├── classification/train_stockout.py  # stock-out risk model
 │   ├── explainability/explain.py         # model explanations
@@ -107,21 +109,28 @@ cp .env.example .env        # Windows PowerShell: Copy-Item .env.example .env
 python -m ipykernel install --user --name stocksense
 ```
 
-**Data:** place the supplied raw files in `data/raw/`. They are not committed to Git.
-> **TODO(team):** document where the raw data is downloaded from and how the
-> cleaned master dataset is shared between members.
+**Data:** a **synthetic training dataset** (stores, products, external factors,
+inventory, transactions) is committed in `data/synthetic/`. See
+[data/synthetic/README.md](data/synthetic/README.md) for the column dictionary,
+table relationships and the data-quality issues injected for cleaning practice.
+Regenerate it with `python -m src.data.generate_synthetic_data`.
+
+Any real/supplied raw files go in `data/raw/`; they are not committed to Git.
+> **TODO(team):** if official hackathon data is provided, document where it is
+> downloaded from and how the cleaned master dataset is shared between members.
 
 ## Running the Code
 
 Run modules from the **project root** so `src` imports work:
 
 ```bash
+python -m src.data.generate_synthetic_data   # (re)create data/synthetic/*.csv
 python -m src.data.prepare_data
 python -m src.forecasting.train_forecast
 python -m src.classification.train_stockout
 ```
 
-They currently only print placeholder messages.
+The generator is fully working; the other modules currently only print placeholder messages.
 
 ## Running Tests
 
