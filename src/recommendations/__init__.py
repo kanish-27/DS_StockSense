@@ -1,0 +1,1 @@
+"""STOCKSENSE recommendations subpackage."""

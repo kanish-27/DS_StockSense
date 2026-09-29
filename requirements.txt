@@ -1,0 +1,40 @@
+# STOCKSENSE - Python dependencies
+# Target: Python 3.11+ (tested import-only on 3.12).
+# Versions are intentionally unpinned. Once the team has a working environment,
+# freeze exact versions with:  pip freeze > requirements.lock.txt
+
+# --- Core data handling ---
+numpy
+pandas
+pyarrow            # fast Parquet read/write for the cleaned master dataset
+
+# --- Statistical analysis ---
+scipy
+statsmodels        # statistical tests, time-series decomposition, baseline forecasting
+
+# --- Machine learning ---
+scikit-learn       # preprocessing, baselines, TimeSeriesSplit, classification metrics
+xgboost            # gradient boosting (forecasting + stock-out classification)
+lightgbm           # alternative gradient boosting for model comparison
+joblib             # saving / loading trained models
+
+# --- Explainability ---
+shap
+
+# --- Visualization ---
+matplotlib
+seaborn
+plotly             # interactive charts, also used inside the Streamlit dashboard
+
+# --- Dashboard (later phase) ---
+streamlit
+
+# --- Notebooks ---
+jupyter
+ipykernel
+
+# --- Configuration ---
+python-dotenv      # loads optional settings from a local .env file
+
+# --- Testing ---
+pytest
